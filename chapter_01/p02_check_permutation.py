@@ -34,6 +34,17 @@ def check_permutation_pythonic(str1, str2):
 
     return Counter(str1) == Counter(str2)
 
+def is_permutation(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    char_count1 = {}
+    for char in s1:
+        char_count1[char] = char_count1.get(char, 0) + 1
+    char_count2 = {}
+    for char in s2:
+        char_count2[char] = char_count2.get(char, 0) + 1
+    return char_count1 == char_count2
+
 
 class Test(unittest.TestCase):
     # str1, str2, is_permutation
